@@ -62,15 +62,15 @@ Shailly Saxena\\
 \hspace*{5mm}Twitter is an excellent medium for the development of hot topics, and these topics often gain a lot of momentum as they pan out to reach a wider variety of people. Analysis of these trending topics as they develop and impact users around the world is a popular area of research in text analysis. Many times, Twitter has been a nexus for people from all over to come together and offer sympathies during tragic events such as the terrorist attacks in Brussels. Users often rally behind simple messages, and weigh in their opinions, popular or unpopular, facilitating global discourse on a brand new scale. As a whole, the variety of information contained within Twitter is loaded with the random musings of over 305 million active users. This is a great obstacle that must be overcome in order to make an generalizations about the data. To be able to distill essential topics is very desirable as business attempt to cater to an increasingly diverse and dynamic consumer base. Such knowledge can also assist with attracting new markets, and to gain a better understanding of their own place in the minds of the general population. \\
 \hspace*{5mm}There has been much research in the structure and dynamics of microblogging networks, and many insights have been gained by looking into how users interact with one another and with the world. Attempts to glean detailed information from the actual contents of Tweets however, has met with limited success. Recent developments in topic-modeling approaches to Twitter data such as Hong and Davison\cite{hong2010empirical} and Zhao, Wayne Xin, et al.\cite{zhao2011comparing} have further refined traditional topic-modeling techniques so that they better cater to the specific structure of Twitter data. In this paper, we explore some of the more promising approaches to topic modeling in tweets, and investigate their implications to further research into developing a more successful Twitter topic model.\\
 \hspace*{5mm}In \cite{hong2010empirical}, various preprocessing methods were employed to increase the accuracy of Latent Dirichlet Allocation(LDA) applied to a series of tweets from September 2009 to January 2010. Tweets were aggregated by the User IDs of their authors, and a new set of documents was created where each document is a \textit{user profile} of a unique user id and his or her combined set of tweets. Hong and Davison saw a significant improvement in the <metric> of their topic models for the user profile approach, however the other alternative approaches employed did not appear to improve <metric>. Thus we will employ and evaluate the user profile aggregation in this paper, to further investigate its effectiveness.\\
-In \cite{zhao2011comparing} researchers attempted to modify LDA so as to adapt the algorithm to model Twitter data more closely. By not only considering the distribution of total topics in the data, topics were also drawn for each user, based on the understanding that each user's set of interests are relevant to how their tweets are composed.
+\hspace*{5mm}In \cite{zhao2011comparing}, researchers attempted to modify LDA so as to adapt the algorithm to model Twitter data more closely. By not only considering the distribution of total topics in the data, topics were also drawn for each user, based on the understanding that each user's set of interests are relevant to how their tweets are composed.
 
 \section{Dataset and Data Preprocessing}
 \hspace*{5mm}Here we say some succint, yet broad descriptions of the data and what we did for data prepping, and analysis. Here we say some succint, yet broad descriptions of what we did for data prepping, and analysis. Here we say some succint, yet broad descriptions of what we did for data prepping, and analysis.
 
 \subsection{The Dataset}
-\hspace*{5mm}The training dataset we considered was obtained from Cheng, Caverlee, and Lee \cite{cheng2010content}, and contains 3,844,612 tweets from 115,886 Twitter users over the time period of September 2009 to January 2010. The test set, also from \cite{cheng2010content}, contains 5,156,047 tweets from 5,136 Twitter users over the same time period.
+\hspace*{5mm}The training dataset we considered was obtained from Cheng, Caverlee, and Lee \cite{cheng2010content}, and contains 3,844,612 tweets from 115,886 Twitter users over the time period of September 2009 to January 2010. The test set, also from \cite{cheng2010content}, contains 5,156,047 tweets from 5,136 Twitter users over the same time period. Each line of the dataset contains a unique user ID and tweet ID, text content, and a timestamp. The text content of each tweet is limited to 140 characters, and can contain references to other users of the form @username, as well as popular \#hashtags. Many tweets also include hyperlinks which are often passed through URL shorteners (e.g. http://goo.gl/uLLAe). The implications of these more anomalous text instances are considered in the next section.
 
-\subsection{Data Preprocessing and Preparation}
+\subsection{Data Preprocessing and Reduction}
 \hspace*{5mm}Due to the unconventional vocabulary in tweets and the large amount of noise inherent in such a diverse set of text, we decided to perform several data reduction steps. 
 
 \begin{filecontents}{jobname.bib}
@@ -96,7 +96,7 @@ In \cite{zhao2011comparing} researchers attempted to modify LDA so as to adapt t
 	booktitle={Proceeding of the 19th ACM Conference on Information and Knowledge Management (CIKM)},
 	month={October},
 	year={2010}
-	}
+}
 \end{filecontents}
 
 \nocite{*}
