@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{hong2010empirical}
+L.~Hong and B.~D. Davison.
+\newblock Empirical study of topic modeling in twitter.
+\newblock In {\em Proceedings of the first workshop on social media analytics},
+  pages 80--88. ACM, 2010.
+
+\bibitem{cheng2010content}
+J.~C. Z.~Cheng and K.~Lee.
+\newblock You are where you tweet: A content-based approach to geo-locating
+  twitter users.
+\newblock In {\em Proceeding of the 19th ACM Conference on Information and
+  Knowledge Management (CIKM)}, October 2010.
+
+\bibitem{zhao2011comparing}
+W.~X. Zhao, J.~Jiang, J.~Weng, J.~He, E.-P. Lim, H.~Yan, and X.~Li.
+\newblock Comparing twitter and traditional media using topic models.
+\newblock In {\em Advances in Information Retrieval}, pages 338--349. Springer,
+  2011.
+
+\end{thebibliography}
