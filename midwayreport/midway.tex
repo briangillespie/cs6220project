@@ -64,7 +64,7 @@ Shailly Saxena\\
 \hspace*{5mm}In \cite{hong2010empirical}, various preprocessing methods were employed to increase the accuracy of Latent Dirichlet Allocation(LDA) applied to a series of tweets from the first and second weeks of November 2009. Tweets were aggregated by the User IDs of their authors, and a new set of documents was created where each document is a \textit{user profile} of a unique user id and his or her combined set of tweets. Hong and Davison saw a significant improvement in the Precision, Recall, and F1 scores of their topic models for the user profile approach, however the other alternative approaches employed did not appear to improve these same metrics as significantly. Due to the success of the \textit{user profile} approach, we will employ and evaluate this method, to further investigate its effectiveness.\\
 \hspace*{5mm}In \cite{zhao2011comparing}, researchers attempted to modify LDA so as to adapt the algorithm to model Twitter data more closely. By not only considering the distribution of total topics in the data, topics were also drawn for each user, based on the understanding that each user's set of interests are relevant to how their tweets are composed.
 
-\section{Dataset, Preprocessing, and Model Evaluation}
+\section{Dataset and Preprocessing}
 \hspace*{5mm}The datasets used were obtained from Cheng, Caverlee, and Lee \cite{cheng2010content}. In order to reduce noise in the text data, a set of stop words were removed from the tweet bodies, the remaining words were then stemmed, and any hyperlinks were also removed. A bag of words model was created, and TF-IDF vectors were generated. For the \textit{user profile} LDA approach \cite{hong2010empirical} and the Twitter-LDA model \cite{zhao2011comparing}, the vectors were aggregated based on user IDs. We also processed each tweet for the documents ``as-is'' for the Twitter-LDA model. The training and tests datasets were merged, and then re-partitioned to prepare for 10-fold cross-validation.
 
 \subsection{The Dataset}
@@ -74,13 +74,16 @@ Shailly Saxena\\
 \subsection{Data Preprocessing and Reduction}
 \hspace*{5mm}Due to the unconventional vocabulary in tweets and the large amount of noise inherent in such a diverse set of text, we decided to perform several data reduction steps. A regular expression was used to remove any odd characters and any URL links, to reduce noise in the data. After pruning the tweet contents, the text was tokenized, stop words were removed, and the remaining tokens were stemmed using the Porter Stemming library from the Natural Language Toolkit (NLTK). The prepared corpus of tweets was then converted to a set of Term Frequency (TF) vectors, using the corpora library from gensim. Gensim also provided a map of words to their hashed keys so that the LDA results could be interpreted.
 
-\subsection{Model Evaluation}
+\section{Model and Evaluation}
+\hspace*{5mm}Latent Dirichlet Allocation, first proposed by Blei, Ng, and Jordan \cite{blei2003latent} is a generative probabilistic model, that seeks to generate mixtures of topics drawn from some distribution of topic probabilities. Each word appearing in these topics is itself probabilistically drawn from some mixture of these topics. This multilevel approach to topic generation has met with significant success in the analysis of text data, and is the subject of focused study in data mining of microblogs such as Twitter and Facebook.\\
+\hspace*{5mm}When measuring the effectiveness of an LDA model, it is important to distinguish a set of metrics which give a complete picture of a word's sensibility with respect to its topic and the document corpus as a whole. To meet this need, our evaluation focuses on Precision and Recall. Additionally, we conflate these two metrics together to generate F1 scores. These metrics were performed on each modeling approach taken, and the results are detailed in the Results and Discussion section.
+\subsection{LDA as a Topic Model}
+\hspace*{5mm}Talk about the why and how of LDA. Then maybe a brief intro into the math, throw in a figure from the paper maybe?
+\subsection{Model Evaluation Metrics}
 \hspace*{5mm}In order to evaluate the success of these topic modeling approaches, we decided to measure the Precision, Recall and F1 scores of the results \cite{hong2010empirical}. 
-\[ \textbf{Precision = }\frac{\textbf{number of true false positives}}{\textbf{number of true positives + false positives }} \]
-
-\[ \textbf{Recall = }\frac{\textbf{number of true false positives}}{\textbf{number of true positives + false negatives }} \]
-
-\[ \textbf{F1 = }\frac{\textbf{Precision x Recall}}{\textbf{Precision + Recall}} \]
+\[ \textbf{Precision = }\frac{\textbf{number of true false positives}}{\textbf{number of true positives } \mathsf{+} \textbf{ false positives }} \]
+\[ \textbf{Recall = }\frac{\textbf{number of true false positives}}{\textbf{number of true positives } \mathsf{+} \textbf{ false negatives }} \]
+\[ \textbf{F1 = }\frac{\textbf{Precision } \mathsf{x} \textbf{ Recall}}{\textbf{Precision } \mathsf{+} \textbf{ Recall}} \]
 
 
 \begin{filecontents}{jobname.bib}
@@ -106,6 +109,15 @@ Shailly Saxena\\
 	booktitle={Proceeding of the 19th ACM Conference on Information and Knowledge Management (CIKM)},
 	month={October},
 	year={2010}
+}
+@article{blei2003latent,
+	title={Latent dirichlet allocation},
+	author={Blei, David M and Ng, Andrew Y and Jordan, Michael I},
+	journal={the Journal of machine Learning research},
+	volume={3},
+	pages={993--1022},
+	year={2003},
+	publisher={JMLR. org}
 }
 \end{filecontents}
 

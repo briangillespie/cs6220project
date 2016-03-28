@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{blei2003latent}
+D.~M. Blei, A.~Y. Ng, and M.~I. Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em the Journal of machine Learning research}, 3:993--1022, 2003.
+
 \bibitem{hong2010empirical}
 L.~Hong and B.~D. Davison.
 \newblock Empirical study of topic modeling in twitter.

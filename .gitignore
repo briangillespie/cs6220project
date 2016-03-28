@@ -1,2 +1,5 @@
 *.name
 *.idea
+.idea/workspace.xml
+.idea/misc.xml
+.idea/cs6220project.iml
