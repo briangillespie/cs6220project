@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.5)  28 MAR 2016 02:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.5)  28 MAR 2016 15:37
 entering extended mode
 **./midway.tex
 (midway.tex
@@ -229,10 +229,31 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 53.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1{C:/Users/Brian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+)
+Overfull \hbox (19.96565pt too wide) in paragraph at lines 67--67
+[]\secfnt DATASET, PRE-PRO-CESS-ING, AND MODEL
+ []
+
+
+Underfull \vbox (badness 3838) has occurred while \output is active []
+
+ [1{C:/Users/Brian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
+Overfull \hbox (17.71689pt too wide) detected at line 77
+[][]
+ []
+
+
+Overfull \hbox (6.39503pt too wide) detected at line 79
+[][]
+ []
+
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+
 
 LaTeX Warning: Overwriting file `./jobname.bib'.
 
@@ -242,27 +263,26 @@ LaTeX Warning: Overwriting file `./jobname.bib'.
 LaTeX Warning: Tab has been converted to Blank Space.
 
 
-(midway.bbl) [2
-
-] (midway.aux) ) 
+(midway.bbl) [2] (midway.aux) ) 
 Here is how much of TeX's memory you used:
- 2414 strings out of 493634
- 28848 string characters out of 3141315
- 92519 words of memory out of 3000000
- 5767 multiletter control sequences out of 15000+200000
- 44167 words of font info for 58 fonts, out of 3000000 for 9000
+ 2429 strings out of 493634
+ 28968 string characters out of 3141315
+ 93519 words of memory out of 3000000
+ 5772 multiletter control sequences out of 15000+200000
+ 53333 words of font info for 68 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,10n,28p,1161b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
-enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on midway.pdf (2 pages, 85877 bytes).
+ 41i,10n,28p,1193b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvi
+ps/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
+9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
+Output written on midway.pdf (2 pages, 99662 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
