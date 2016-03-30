@@ -1,13 +1,12 @@
 from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
-from gensim import corpora, models
 import pandas as pd
 import numpy as np
 import re
-import sys
 
 BGTRAINING = "/home/bng1290/project/data/training_set_tweets.txt"
+SMALLDUMP = "C:\Users\Brian\Documents\GitHub\cs6220project\project\data\smallDump.txt"
 BGTEST = "C:\Users\Brian\Documents\DataMiningProject\project\data\\test_set_tweets.txt"
 BGSMALLDUMP = "/home/bng1290/project/data/smallDump.txt"
 
@@ -41,7 +40,7 @@ def find_top_20_words(word_count_tuple):
     return sorted(word_count_tuple, key=lambda x: x[1], reverse=True)[:20]
 
 
-data = pd.read_csv(BGTRAINING,
+data = pd.read_csv(SMALLDUMP,
                    sep='\t',
                    names=['userid', 'tweetid', 'tokens', 'date'],
                    index_col=False,
@@ -65,12 +64,12 @@ print('tokenized')
 print(data[:5])
 
 en_stopper = get_stop_words('en')
-data['tokens'] = data['tokens'].map(lambda x: stop_token_list(x, en_stopper))
+data['tokens'] = data['tokens'].apply(lambda x: stop_token_list(x, en_stopper))
 print('stopped')
 print(data[:5])
 
 p_stemmer = PorterStemmer()
-data['tokens'] = data['tokens'].map(lambda x: stem_word_list(x))
+data['tokens'] = data['tokens'].apply(lambda x: stem_word_list(x))
 print(data[:5])
 print('stemmed')
 
