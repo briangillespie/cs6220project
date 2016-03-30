@@ -1,0 +1,27 @@
+Total number of words7207
+Average words in a tweet:7.207
+No of words  in Longest tweet:18
+No of words in shortest tweet:1
+No. of words in Vocabulary347
+Top 20 users and their tweet counts      userid  count
+6   15990804    100
+3   10950582     80
+8         18     76
+5         15     75
+4         14     60
+15  30015494     40
+14  29753356     40
+23  65536024     40
+21  63963170     40
+20  60730027     40
+19  53717680     40
+18  34865169     40
+16  31064071     40
+12  22937622     40
+13  28835844     40
+11  22743516     40
+10  19922973     40
+9   18612228     40
+22  65142794     37
+7   17825828     35
+Top 20 words and their counts:{u'anntaylor': 25, u'learn': 18, u'mom': 22, u'hotrod': 23, u'citi': 18, u'peopl': 20, u'twitter': 31, u'work': 34, u'upload': 26, u'coffe': 21, u'turn': 18, u'fb': 28, u'follow': 21, u'chat': 27, u'teeth': 36, u'home': 24, u'white': 27, u'youtub': 27, u'lillij': 18, u'hope': 18}
