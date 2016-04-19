@@ -15,15 +15,14 @@ retweet_token = 'rt'
 regex = r'(\s*)@\w+|[^a-zA-Z ]|\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*'
 DATAFRAME = open('dataframe.txt', 'w+')
 USER_PROFILE = open('user_profile.txt', 'w+')
-STOP_WORDS = ['make', 'just', 'u', 'now', 'going', 'video', 'like', 'know', 'get', 'lol', 'can', 'im', 'go', 'new', 'us',
-              'rt', 'good', 'like', 'will', 'come', 'one', 'dont', 'today', 'check', 'back', 'see', 'day', 'tonight',
-              'cant', 'want', 'got', 'right', 'still', 'need', 'time', 'week', 'great', 'watch', 'looking', 'hour',
-              'love', 'free', 'end', 'live', 'think', 'thanks', 'let', 'awesome', 'whats', 'night', 'wait', 'makes',
-              'making', 'first', 'last', 'take', 'nan', 'didnt']
+STOP_WORDS = ['make', 'just', 'u', 'now', 'going', 'video', 'know', 'get', 'can', 'im', 'go', 'new', 'us',
+              'rt', 'like', 'will', 'come', 'one', 'dont', 'today', 'check', 'back', 'see', 'day',
+              'cant', 'want', 'got', 'right', 'still', 'need', 'time', 'week', 'watch', 'looking', 'hour',
+              'end', 'let', 'whats', 'makes', 'making', 'first', 'last', 'take', 'nan', 'didnt']
 
 
 def remove_stop_words(row, stop_words_list):
-    stopped_tokens = [token for token in row if token not in stop_words_list and STOP_WORDS]
+    stopped_tokens = [token for token in row if token not in stop_words_list and token not in STOP_WORDS]
     return stopped_tokens
 
 
@@ -32,7 +31,7 @@ def stem_tokens(tweet):
     return stemmed_tweet
 
 
-data = pd.read_csv(ALL_TRAINING,
+data = pd.read_csv(dd,
                    sep='\t',
                    header=None,
                    names=['uid', 'tweetid', 'body', 'date'],
@@ -42,6 +41,9 @@ data = pd.read_csv(ALL_TRAINING,
                    engine='c',
                    error_bad_lines=False)
 
+# dropping the lines that do not match the required format
+data.dropna(axis=0, how='any', inplace=True)
+print(data.head())
 # only keeping uid and tweets, dropping the rest
 data.drop(data.columns[[1, 3]], axis=1, inplace=True)
 print(data.head())
@@ -69,14 +71,14 @@ data.to_csv(DATAFRAME)
 data = data.groupby('uid').agg(lambda x: x.sum()).reset_index()
 data.to_csv(USER_PROFILE)
 
-dictionary = corpora.Dictionary(data['body'])
-corpus = [dictionary.doc2bow(text) for text in data['body']]
-# print(corpus)
-
-tfidf = models.TfidfModel(corpus)
-corpus_tfidf = tfidf[corpus]
-
-model = gensim.models.LdaModel(corpus_tfidf, id2word=dictionary, alpha='auto', num_topics=10, passes=10)
-model.save('tweets.lda')
-
-print(model.print_topics(num_topics=10, num_words=3))
+# dictionary = corpora.Dictionary(data['body'])
+# corpus = [dictionary.doc2bow(text) for text in data['body']]
+# # print(corpus)
+#
+# tfidf = models.TfidfModel(corpus)
+# corpus_tfidf = tfidf[corpus]
+#
+# model = gensim.models.LdaModel(corpus_tfidf, id2word=dictionary, alpha='auto', num_topics=10, passes=10)
+# model.save('tweets.lda')
+#
+# print(model.print_topics(num_topics=10, num_words=3))
