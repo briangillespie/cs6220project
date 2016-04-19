@@ -10,7 +10,7 @@ SMALLDATA = False
 
 if not WINDOWS:
     DATA = '/home/bng1290/project/data/trainingdumpprepped.txt'
-    OUTPUT = '/home/bng1290/project/data/edaOut.txt'
+    OUTPUT = open('/home/bng1290/project/data/edaOut.txt', "w+")
 else:
     DATA = "C:\Users\Brian\Documents\GitHub\cs6220project\project\data\cleandata.txt"
     OUTPUT = open("C:\Users\Brian\Documents\GitHub\cs6220project\project\data\edaOut.txt", "w+")
@@ -62,7 +62,7 @@ print("No of words in shortest tweet:" + str(min), file=OUTPUT) #some tweets onl
 tokens = data['tokens'].apply(lambda x: literal_eval(x)).values
 
 dictionary = corpora.Dictionary(tokens)
-dictionary.filter_extremes(no_below=5, no_above=0.7, keep_n=100000)
+dictionary.filter_extremes(no_below=5, no_above=0.7)
 vocab_count = len(dictionary)
 print(vocab_count)
 print("No. of words in Vocabulary" + str(vocab_count), file=OUTPUT)

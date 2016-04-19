@@ -35,11 +35,11 @@ def stop_token_list(list_of_tokens, stop_words):
             stopped_tokens.append(token)
     return stopped_tokens
 
-def stem_word_list(list_of_stopped_token):
-    stemmed_tokens = []
-    for token in list_of_stopped_token:
-        stemmed_tokens.append(p_stemmer.stem(token))
-    return stemmed_tokens
+# def stem_word_list(list_of_stopped_token):
+#     stemmed_tokens = []
+#     for token in list_of_stopped_token:
+#         stemmed_tokens.append(p_stemmer.stem(token))
+#     return stemmed_tokens
 
 
 if SMALLDATA:
@@ -62,30 +62,23 @@ else:
                        engine='c',
                        error_bad_lines=False)
 
-data.drop(data.columns[[1,3]], axis=1, inplace=True)
+data.drop(data.columns[[1]], axis=1, inplace=True)
 data.dropna(axis=0, how='any', inplace=True)
-print("Dropping unused columns...")
-print(data[:5])
+print data.size
 
-data['tokens'] = data['tokens'].apply(lambda x: re.sub(r'[^a-zA-Z ]|\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', '', str(x)).lower())
-print("cleaned")
-print(data[:5])
+# print type(data['date'][0])
+# criterion = (data['date'] >= '2009-11-01') & (data['date'] <= '2009-11-30')
+criterion = data['tokens'].map(lambda x: ('RT' not in x))
+data = data[criterion]
+# print data['userid'].unique().size
+# print data['tokens'].size
 
-tokenizer = RegexpTokenizer(r'\w+')
-data['tokens'] = data['tokens'].apply(lambda x: tokenizer.tokenize(str(x)))
-print('tokenized')
-print(data[:5])
+print data.size
 
-en_stopper = get_stop_words('en') + STOP_WORDS
-data['tokens'] = data['tokens'].apply(lambda x: stop_token_list(x, en_stopper))
-print('stopped')
-print(data[:5])
-#
-p_stemmer = PorterStemmer()
-data['tokens'] = data['tokens'].apply(lambda x: stem_word_list(x))
-print('stemmed')
-print(data[:5])
+print data.iloc[70:85]
 
-cols = ['userid', 'tokens']
-data[cols].to_csv(OUTPUT, ',')
-print('saved prepped data')
+# cols = ['userid', 'tokens', 'date']
+# data[cols].to_csv(OUTPUT, ',')
+# print('saved prepped data')
+
+# print data.head()

@@ -10,3 +10,8 @@
 .idea/misc.xml
 .idea/workspace.xml
 project/data/cleandata.txt
+*.png
+midwayreport/jobname.bib
+*.aux
+*.log
+*.gz
