@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{blei2003latent}
+David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em the Journal of machine Learning research}, 3:993--1022, 2003.
+
+\bibitem{godin2013using}
+Fr{\'e}deric Godin, Viktor Slavkovikj, Wesley De~Neve, Benjamin Schrauwen, and
+  Rik Van~de Walle.
+\newblock Using topic models for twitter hashtag recommendation.
+\newblock In {\em Proceedings of the 22nd international conference on World
+  Wide Web companion}, pages 593--596. International World Wide Web Conferences
+  Steering Committee, 2013.
+
+\bibitem{griffiths2002gibbs}
+Tom Griffiths.
+\newblock Gibbs sampling in the generative model of latent dirichlet
+  allocation.
+\newblock 2002.
+
+\bibitem{hoffman2010online}
+Matthew Hoffman, Francis~R Bach, and David~M Blei.
+\newblock Online learning for latent dirichlet allocation.
+\newblock In {\em advances in neural information processing systems}, pages
+  856--864, 2010.
+
+\bibitem{hong2010empirical}
+Liangjie Hong and Brian~D Davison.
+\newblock Empirical study of topic modeling in twitter.
+\newblock In {\em Proceedings of the first workshop on social media analytics},
+  pages 80--88. ACM, 2010.
+
+\bibitem{kywe2012recommending}
+Su~Mon Kywe, Tuan-Anh Hoang, Ee-Peng Lim, and Feida Zhu.
+\newblock On recommending hashtags in twitter networks.
+\newblock In {\em Social Informatics}, pages 337--350. Springer, 2012.
+
+\bibitem{li2011twitter}
+Tianxi Li, Yu~Wu, and Yu~Zhang.
+\newblock Twitter hash tag prediction algorithm.
+\newblock In {\em ICOMP’11-The 2011 International Conference on Internet
+  Computing}, 2011.
+
+\bibitem{mazzia2009suggesting}
+Allie Mazzia and James Juett.
+\newblock Suggesting hashtags on twitter.
+\newblock {\em EECS 545m, Machine Learning, Computer Science and Engineering,
+  University of Michigan}, 2009.
+
+\bibitem{cheng2010content}
+J.~Caverlee Z.~Cheng and K.~Lee.
+\newblock You are where you tweet: A content-based approach to geo-locating
+  twitter users.
+\newblock In {\em Proceeding of the 19th ACM Conference on Information and
+  Knowledge Management (CIKM)}, October 2010.
+
+\bibitem{zangerle2011recommending}
+Eva Zangerle, Wolfgang Gassler, and Gunther Specht.
+\newblock Recommending\#-tags in twitter.
+\newblock In {\em Proceedings of the Workshop on Semantic Adaptive Social Web
+  (SASWeb 2011). CEUR Workshop Proceedings}, volume 730, pages 67--78, 2011.
+
+\bibitem{zhao2011comparing}
+Wayne~Xin Zhao, Jing Jiang, Jianshu Weng, Jing He, Ee-Peng Lim, Hongfei Yan,
+  and Xiaoming Li.
+\newblock Comparing twitter and traditional media using topic models.
+\newblock In {\em Advances in Information Retrieval}, pages 338--349. Springer,
+  2011.
+
+\end{thebibliography}
