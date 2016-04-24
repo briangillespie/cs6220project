@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  23 APR 2016 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  23 APR 2016 22:58
 entering extended mode
 **midway.tex
 (midway.tex
@@ -232,7 +232,13 @@ Overfull \hbox (1.27405pt too wide) in paragraph at lines 58--60
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--72
+Overfull \hbox (16.32187pt too wide) in paragraph at lines 83--87
+| \T1/aer/m/n/9 Re-cent de-vel-op-ments in hash-tag rec-om-men-da-tion ap-proac
+hes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--87
 
  []
 
@@ -240,34 +246,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--72
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
-<figs/Smoothed_LDA.png, id=14, 371.88937pt x 183.68625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+<figs/Smoothed_LDA.png, id=11, 371.88937pt x 183.68625pt>
 File: figs/Smoothed_LDA.png Graphic file (type png)
 
 <use figs/Smoothed_LDA.png>
-Package pdftex.def Info: figs/Smoothed_LDA.png used on input line 117.
+Package pdftex.def Info: figs/Smoothed_LDA.png used on input line 104.
 (pdftex.def)             Requested size: 178.50487pt x 88.16838pt.
 
-<figs/topwordsorig.png, id=16, 1335.99126pt x 610.28pt>
-File: figs/topwordsorig.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
-<use figs/topwordsorig.png>
-Package pdftex.def Info: figs/topwordsorig.png used on input line 123.
-(pdftex.def)             Requested size: 503.99217pt x 213.39633pt.
- <figs/topwords.png, id=17, 1403.2425pt x 610.28pt>
-File: figs/topwords.png Graphic file (type png)
+ []
 
-<use figs/topwords.png>
-Package pdftex.def Info: figs/topwords.png used on input line 125.
-(pdftex.def)             Requested size: 503.98927pt x 213.39633pt.
+[2 <./figs/Smoothed_LDA.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
 
 
 LaTeX Warning: Overwriting file `./jobname.bib'.
@@ -276,25 +298,24 @@ LaTeX Warning: Overwriting file `./jobname.bib'.
 LaTeX Warning: Tab has been converted to Blank Space.
 
 
-(midway.bbl) [3 <./figs/Smoothed_LDA.png>] [4 <./figs/topwordsorig.png> <./figs
-/topwords.png>] (midway.aux) ) 
+(midway.bbl) [3] (midway.aux) ) 
 Here is how much of TeX's memory you used:
- 2453 strings out of 493698
- 28338 string characters out of 3144401
- 94127 words of memory out of 3000000
- 5734 multiletter control sequences out of 15000+200000
+ 2443 strings out of 493698
+ 28120 string characters out of 3144401
+ 92127 words of memory out of 3000000
+ 5726 multiletter control sequences out of 15000+200000
  47315 words of font info for 64 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,10n,28p,1485b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C
-:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/MiKTeX 2.9/f
-onts/type1/urw/helvetic/uhvb8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr
-8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on midway.pdf (4 pages, 146298 bytes).
+ 41i,10n,28p,1362b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<
+C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy9.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/MiKTeX 2.9/
+fonts/type1/urw/helvetic/uhvb8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
+r8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
+Output written on midway.pdf (3 pages, 123738 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
