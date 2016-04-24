@@ -1,9 +1,28 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{blei2003latent}
 D.~M. Blei, A.~Y. Ng, and M.~I. Jordan.
 \newblock Latent dirichlet allocation.
 \newblock {\em the Journal of machine Learning research}, 3:993--1022, 2003.
+
+\bibitem{godin2013using}
+F.~Godin, V.~Slavkovikj, W.~De~Neve, B.~Schrauwen, and R.~Van~de Walle.
+\newblock Using topic models for twitter hashtag recommendation.
+\newblock In {\em Proceedings of the 22nd international conference on World
+  Wide Web companion}, pages 593--596. International World Wide Web Conferences
+  Steering Committee, 2013.
+
+\bibitem{griffiths2002gibbs}
+T.~Griffiths.
+\newblock Gibbs sampling in the generative model of latent dirichlet
+  allocation.
+\newblock 2002.
+
+\bibitem{hoffman2010online}
+M.~Hoffman, F.~R. Bach, and D.~M. Blei.
+\newblock Online learning for latent dirichlet allocation.
+\newblock In {\em advances in neural information processing systems}, pages
+  856--864, 2010.
 
 \bibitem{hong2010empirical}
 L.~Hong and B.~D. Davison.
@@ -11,12 +30,35 @@ L.~Hong and B.~D. Davison.
 \newblock In {\em Proceedings of the first workshop on social media analytics},
   pages 80--88. ACM, 2010.
 
+\bibitem{kywe2012recommending}
+S.~M. Kywe, T.-A. Hoang, E.-P. Lim, and F.~Zhu.
+\newblock On recommending hashtags in twitter networks.
+\newblock In {\em Social Informatics}, pages 337--350. Springer, 2012.
+
+\bibitem{li2011twitter}
+T.~Li, Y.~Wu, and Y.~Zhang.
+\newblock Twitter hash tag prediction algorithm.
+\newblock In {\em ICOMP’11-The 2011 International Conference on Internet
+  Computing}, 2011.
+
+\bibitem{mazzia2009suggesting}
+A.~Mazzia and J.~Juett.
+\newblock Suggesting hashtags on twitter.
+\newblock {\em EECS 545m, Machine Learning, Computer Science and Engineering,
+  University of Michigan}, 2009.
+
 \bibitem{cheng2010content}
 J.~C. Z.~Cheng and K.~Lee.
 \newblock You are where you tweet: A content-based approach to geo-locating
   twitter users.
 \newblock In {\em Proceeding of the 19th ACM Conference on Information and
   Knowledge Management (CIKM)}, October 2010.
+
+\bibitem{zangerle2011recommending}
+E.~Zangerle, W.~Gassler, and G.~Specht.
+\newblock Recommending\#-tags in twitter.
+\newblock In {\em Proceedings of the Workshop on Semantic Adaptive Social Web
+  (SASWeb 2011). CEUR Workshop Proceedings}, volume 730, pages 67--78, 2011.
 
 \bibitem{zhao2011comparing}
 W.~X. Zhao, J.~Jiang, J.~Weng, J.~He, E.-P. Lim, H.~Yan, and X.~Li.
