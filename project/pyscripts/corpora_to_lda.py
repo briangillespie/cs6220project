@@ -1,5 +1,4 @@
 from __future__ import print_function
-import gensim
 from gensim import corpora, models
 
 path = "C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output/"

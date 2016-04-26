@@ -51,6 +51,8 @@ data = pd.read_csv(ALL_TRAINING,
                    engine='c',
                    error_bad_lines=False)
 
+print("No. of tweets in Tweets file before pre-processing = ", len(data['body']))
+
 # dropping the lines that do not match the required format
 data.dropna(axis=0, how='any', inplace=True)
 print("NA Dropped")
@@ -96,10 +98,11 @@ print("stemmed")
 
 # saving this dataframe in a CSV for later use
 data.to_csv(TWEETS)
+
 data_user_profile = data.groupby('uid').agg(lambda x: x.sum()).reset_index()
-print(data[:10])
-print(data_user_profile[:10])
+
 data_user_profile.to_csv(USER_PROFILE)
+
 print("written to files")
-
-
+print("No. of tweets in Tweets file after pre-processing = ", len(data['body']))
+print("No. of tweets in User Profile file after pre-processing= ", len(data_user_profile['body']))
