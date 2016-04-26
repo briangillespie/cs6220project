@@ -1,27 +1,36 @@
 from __future__ import print_function
-import gensim
-from gensim import corpora, models
 import pandas as pd
 import re
 from nltk.stem.snowball import SnowballStemmer
 from stop_words import get_stop_words
 from nltk import RegexpTokenizer
 
-ALL_TRAINING = 'training_set_tweets.txt'
-OUTPUT = open('out.txt', 'a')
+ALL_TRAINING = 'C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data/training_datav2.txt'
+DD = "C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data\dd.txt"
+TWEETS = open("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output\\tweets.txt", "w+")
+USER_PROFILE = open("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output\user_profile.txt", "w+")
 retweet_token = 'rt'
 regex = r'(\s*)@\w+|[^a-zA-Z ]|\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*'
-DATAFRAME = open('dataframe.txt', 'w+')
-USER_PROFILE = open('user_profile.txt', 'w+')
+stop_words_tweets = ['make', 'just', 'u', 'now', 'going', 'video', 'know', 'get', 'can', 'im', 'go', 'new', 'us',
+                     'like', 'will', 'come', 'one', 'dont', 'today', 'check', 'back', 'see', 'day',
+                     'cant', 'want', 'got', 'right', 'still', 'need', 'time', 'week', 'watch', 'looking', 'hour',
+                     'end', 'let', 'whats', 'makes', 'making', 'first', 'last', 'take', 'nan', 'didnt']
 
-STOP_WORDS = ['make', 'just', 'u', 'now', 'going', 'video', 'know', 'get', 'can', 'im', 'go', 'new', 'us',
-              'rt', 'like', 'will', 'come', 'one', 'dont', 'today', 'check', 'back', 'see', 'day',
-              'cant', 'want', 'got', 'right', 'still', 'need', 'time', 'week', 'watch', 'looking', 'hour',
-              'end', 'let', 'whats', 'makes', 'making', 'first', 'last', 'take', 'nan', 'didnt']
+stop_words_new = pd.read_csv("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data\\all_stop.txt",
+                             sep='\n',
+                             header=None,
+                             names=['stop_word'],
+                             engine='c',
+                             error_bad_lines=False)
+stop_words_tweets = set(stop_words_tweets)
+stop_words_new = set(stop_words_new["stop_word"])
+stop_words_nltk = set(get_stop_words("en"))
+stop_words_tweets.update(stop_words_new)
+stop_words_tweets.update(stop_words_nltk)
 
 
-def remove_stop_words(row, stop_words_list):
-    stopped_tokens = [token for token in row if token not in stop_words_list and token not in STOP_WORDS]
+def remove_stop_words(row):
+    stopped_tokens = [token for token in row if token not in stop_words_tweets]
     return stopped_tokens
 
 
@@ -30,10 +39,10 @@ def stem_tokens(tweet):
     return stemmed_tweet
 
 
-data = pd.read_csv(ALL_TRAINING,
-                   sep='\t',
+data = pd.read_csv(DD,
+                   sep=',',
                    header=None,
-                   names=['uid', 'tweetid', 'body', 'date'],
+                   names=['id', 'uid', 'tweetid', 'body', 'date'],
                    index_col=False,
                    parse_dates=[3],
                    infer_datetime_format=True,
@@ -45,7 +54,7 @@ data.dropna(axis=0, how='any', inplace=True)
 print("NA Dropped")
 
 # only keeping uid and tweets, dropping the rest
-data.drop(data.columns[[1, 3]], axis=1, inplace=True)
+data.drop(data.columns[[0, 2, 4]], axis=1, inplace=True)
 print("Dropped cols")
 
 # removing any rows where UID is not a valid UID
@@ -69,12 +78,11 @@ data.reset_index(drop=True, inplace=True)
 print("retweets removed")
 
 # remove the stop words
-stop_words = get_stop_words("en")
-data['body'] = data['body'].map(lambda x: (remove_stop_words(x, stop_words)))
+data['body'] = data['body'].map(lambda x: (remove_stop_words(x)))
 print("stop words removed")
 
 # remove the instances where there is are no words in the tweet remaining after pre-processing
-criterion = data['body'].map(lambda x: (len(x) != 0))
+criterion = data['body'].map(lambda x: (len(x) != 0 or len(x) != 1))
 data = data[criterion]
 data.reset_index(drop=True, inplace=True)
 print("removed empty retweets")
@@ -85,7 +93,7 @@ data['body'] = data['body'].map(lambda x: stem_tokens(x))
 print("stemmed")
 
 # saving this dataframe in a CSV for later use
-data.to_csv(DATAFRAME)
+data.to_csv(TWEETS)
 data_user_profile = data.groupby('uid').agg(lambda x: x.sum()).reset_index()
 print(data[:10])
 print(data_user_profile[:10])
@@ -93,25 +101,3 @@ data_user_profile.to_csv(USER_PROFILE)
 print("written to files")
 
 
-def perform_lda(df, no_of_topics, corpora_file, lda_file):
-    dictionary = corpora.Dictionary(df['body'])
-    # remove the words that occur only once in the dictionary
-    once_ids = [token_id for token_id, doc_freq in dictionary.dfs.iteritems() if doc_freq == 1]
-    dictionary.filter_tokens(once_ids)
-    print("dictionary created")
-
-    # save the dictionary for later use
-    corpus = [dictionary.doc2bow(text) for text in df['body']]
-    corpora.MmCorpus.serialize(corpora_file, corpus, id2word=dictionary)
-    print("corpus created")
-
-    tfidf = models.TfidfModel(corpus)
-    corpus_tfidf = tfidf[corpus]
-
-    model = gensim.models.LdaModel(corpus_tfidf, id2word=dictionary, alpha='auto', num_topics=no_of_topics)
-    model.save(lda_file)
-
-    print(model.print_topics(num_topics=no_of_topics, num_words=5), file=OUTPUT)
-
-perform_lda(data, 100, 'tweets_corpora.mm', 'tweets.lda')
-perform_lda(data_user_profile, 40, 'tweets_corpora_up.mm', 'tweets_up.lda')
