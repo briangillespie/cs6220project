@@ -5,10 +5,12 @@ from nltk.stem.snowball import SnowballStemmer
 from stop_words import get_stop_words
 from nltk import RegexpTokenizer
 
-ALL_TRAINING = 'C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data/training_datav2.txt'
-DD = "C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data\dd.txt"
-TWEETS = open("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output\\tweets.txt", "w+")
-USER_PROFILE = open("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output\user_profile.txt", "w+")
+path_data = "C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data/"
+path_output = "C:\Users\shail_000\PycharmProjects\TopicModelingLDA\output/"
+ALL_TRAINING = path_data + "training_datav2.txt"
+DD = path_data + "dd.txt"
+TWEETS = open(path_output + "tweets.txt", "w+")
+USER_PROFILE = open(path_output + "user_profile.txt", "w+")
 retweet_token = 'rt'
 regex = r'(\s*)@\w+|[^a-zA-Z ]|\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*'
 stop_words_tweets = ['make', 'just', 'u', 'now', 'going', 'video', 'know', 'get', 'can', 'im', 'go', 'new', 'us',
@@ -16,7 +18,7 @@ stop_words_tweets = ['make', 'just', 'u', 'now', 'going', 'video', 'know', 'get'
                      'cant', 'want', 'got', 'right', 'still', 'need', 'time', 'week', 'watch', 'looking', 'hour',
                      'end', 'let', 'whats', 'makes', 'making', 'first', 'last', 'take', 'nan', 'didnt']
 
-stop_words_new = pd.read_csv("C:\Users\shail_000\PycharmProjects\TopicModelingLDA\data\\all_stop.txt",
+stop_words_new = pd.read_csv(path_data + "all_stop.txt",
                              sep='\n',
                              header=None,
                              names=['stop_word'],
@@ -39,7 +41,7 @@ def stem_tokens(tweet):
     return stemmed_tweet
 
 
-data = pd.read_csv(DD,
+data = pd.read_csv(ALL_TRAINING,
                    sep=',',
                    header=None,
                    names=['id', 'uid', 'tweetid', 'body', 'date'],
